@@ -34,4 +34,4 @@ spring:
         spring:
           json:
             trusted:
-              packages: com.course.kafka.kafkaorder.Broker.Message
+              packages: "*"

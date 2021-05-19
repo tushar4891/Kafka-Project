@@ -12,4 +12,14 @@ public class KafkaConfig {
 	public NewTopic topicOrder() {
 		return TopicBuilder.name("t.commodity.order").partitions(2).replicas(1).build();
 	}
+
+	@Bean
+	public NewTopic newTopicOrder() {
+		return TopicBuilder.name("t.commodity.promotion").partitions(1).replicas(1).build();
+	}
+
+	// @Bean
+	// public NewTopic newTopicOrder1() {
+	// 	return TopicBuilder.name("t.commodity.promotion-uppercase").partitions(2).replicas(1).build();
+	// }
 }

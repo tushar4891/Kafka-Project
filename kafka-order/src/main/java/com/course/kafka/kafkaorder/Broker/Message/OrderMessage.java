@@ -1,11 +1,7 @@
 package com.course.kafka.kafkaorder.Broker.Message;
 
 import java.time.LocalDateTime;
-
-import com.course.kafka.kafkaorder.Util.LocalDateTimeDeserializer;
-import com.course.kafka.kafkaorder.Util.LocalDateTimeSerializer;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class OrderMessage {
     
@@ -13,8 +9,7 @@ public class OrderMessage {
 
 	private String itemName;
 
-	@JsonSerialize(using = LocalDateTimeSerializer.class)
-	@JsonDeserialize(using = LocalDateTimeDeserializer.class)
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime orderDateTime;
 
 	private String orderLocation;
